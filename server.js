@@ -5,11 +5,12 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.get("/", (req, res) => {
-    res.json({ message: "Hello from server!" });
+    console.log(req.headers);
+    res.send("Hello from server!");
   });
   
 
-app.listen(PORT,function(err){
-    if(err)console.log('error', err);
-    console.log('server is running on port',PORT);
+app.listen(PORT,()=>{
+    
+    console.log(`server listening at http://localhost:${PORT}`);
 })
