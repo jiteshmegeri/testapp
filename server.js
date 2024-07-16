@@ -9,4 +9,7 @@ app.get("/", (req, res) => {
   });
   
 
-app.listen();
+app.listen(PORT,function(err){
+    if(err)console.log('error', err);
+    console.log('server is running on port',PORT);
+})
